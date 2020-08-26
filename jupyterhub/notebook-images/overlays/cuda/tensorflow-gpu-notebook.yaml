@@ -28,6 +28,7 @@ items:
       contextDir: minimal-notebook
       git:
         uri: https://github.com/vpavlin/jupyter-notebooks
+        ref: bug/gpu-jupyter-missing
       type: Git
     strategy:
       sourceStrategy:
