@@ -18,7 +18,7 @@ spec:
       forcePull: true
       from:
         kind: DockerImage
-        name: quay.io/odh-jupyterhub/s2i-spark-container:spark2.4.5-1
+        name: quay.io/llasmith/s2i-spark-container:thoth
       env:
       - name: "ENABLE_PIPENV"
         value: "1"
