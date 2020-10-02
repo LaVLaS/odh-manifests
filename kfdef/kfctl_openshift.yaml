@@ -67,11 +67,6 @@ spec:
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: radanalyticsio/spark/operator
-    name: radanalyticsio-spark-operator
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
         path: prometheus/cluster
     name: prometheus-cluster
   - kustomizeConfig:

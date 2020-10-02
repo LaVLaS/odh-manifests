@@ -21,13 +21,8 @@ Spark Operator does not provide any parameters.
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: radanalyticsio/spark/cluster
+        path: radanalyticsio/cluster
     name: radanalyticsio-cluster
-  - kustomizeConfig:
-      repoRef:
-        name: manifests
-        path: radanalyticsio/spark/operator
-    name: radanalyticsio-spark-operator
 ```
 
 
