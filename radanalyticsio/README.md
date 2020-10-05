@@ -1,8 +1,6 @@
 # Radanalytics
 
-Radanalytics comes with 1 component:
-
-1. [spark operator](#spark-operator)
+[Radanalytics](https://radanalytics.io/) contains one component, a [spark operator](#spark-operator), that deploy [Apache Spark](https://spark.apache.org) clusters for large-scale data processing.
 
 ## Spark Operator
 
@@ -21,8 +19,8 @@ Spark Operator does not provide any parameters.
   - kustomizeConfig:
       repoRef:
         name: manifests
-        path: radanalyticsio/cluster
-    name: radanalyticsio-cluster
+        path: radanalyticsio/spark/cluster
+    name: radanalyticsio-spark-cluster
 ```
 
 
