@@ -1,0 +1,10 @@
+varReference:
+- path: subjects/namespace
+  kind: ClusterRoleBinding
+  apiGroup: rbac.authorization.k8s.io
+- path: metadata/name
+  kind: SecurityContextConstraints
+  apiGroup: security.openshift.io
+- path: users
+  kind: SecurityContextConstraints
+  apiGroup: security.openshift.io
