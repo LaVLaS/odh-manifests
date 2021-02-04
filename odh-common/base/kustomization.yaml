@@ -3,6 +3,8 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - operatorgroup.yaml
+- ../../jobs/installplan-approver
+
 namespace: opendatahub
 commonLabels:
   opendatahub.io/component: "true"

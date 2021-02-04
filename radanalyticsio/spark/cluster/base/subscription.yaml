@@ -5,7 +5,7 @@ metadata:
   namespace: opendatahub
 spec:
   channel: alpha
-  installPlanApproval: Automatic
+  installPlanApproval: Manual
   name: radanalytics-spark
   source: community-operators
   sourceNamespace: openshift-marketplace

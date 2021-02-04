@@ -5,6 +5,7 @@ metadata:
   namespace: openshift-operators
 spec:
   name: strimzi-kafka-operator
+  installPlanApproval: Manual
   channel: "strimzi-0.19.x"
   source: community-operators
   sourceNamespace: openshift-marketplace
