@@ -6,7 +6,9 @@ commonLabels:
   opendatahub.io/component: "true"
   component.opendatahub.io/name: grafana
 resources:
-- datasource.yaml
-- dashboard.yaml
 - argo-dashboard.yaml
+- dashboard.yaml
+- datasource.yaml
 - grafana.yaml
+- jupyterhub-sli-dashboard.yaml
+- jupyterhub-usage-dashboard.yaml
