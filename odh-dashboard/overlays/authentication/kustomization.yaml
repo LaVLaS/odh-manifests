@@ -1,0 +1,44 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+bases:
+- ../../base
+patchesJson6902:
+  - path: deployment.yaml
+    target:
+      group: apps
+      kind: Deployment
+      version: v1
+      name: odh-dashboard
+  - path: service-account.yaml
+    target:
+      kind: ServiceAccount
+      version: v1
+      name: odh-dashboard
+  - path: service.yaml
+    target:
+      kind: Service
+      version: v1
+      name: odh-dashboard
+  - patch: |
+      - op: replace
+        path: /spec/port/targetPort
+        value: 8443
+      - op: replace
+        path: /spec/tls/termination
+        value: Reencrypt
+    target:
+      group: route.openshift.io
+      kind: Route
+      name: odh-dashboard
+      version: v1
+  - patch: |
+      - op: replace
+        path: /spec/ports/0/targetPort
+        value: 8443
+      - op: replace
+        path: /spec/ports/0/port
+        value: 8443
+    target:
+      kind: Service
+      name: odh-dashboard
+      version: v1
