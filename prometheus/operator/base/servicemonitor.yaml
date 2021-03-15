@@ -6,7 +6,7 @@ metadata:
   name: odhservicemonitor
 spec:
   endpoints:
-    - port: web # Argo
+    - port: metrics # Argo
     - port: http-metrics # Open Data Hub Operator
     - port: cr-metrics # Open Data Hub Operator
     - bearerTokenSecret:
