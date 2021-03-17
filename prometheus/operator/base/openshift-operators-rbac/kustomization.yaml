@@ -1,7 +1,19 @@
 ---
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-namespace: openshift-operators
+
 resources:
   - prometheus-monitoring-role.yaml
   - prometheus-monitoring-role-binding.yaml
+
+vars:
+  - name: namespace
+    objref:
+      kind: RoleBinding
+      apiVersion: rbac.authorization.k8s.io/v1
+      name: odh-prometheus-monitoring-rb
+    fieldref:
+      fieldpath: metadata.namespace
+
+configurations:
+  - params.yaml
