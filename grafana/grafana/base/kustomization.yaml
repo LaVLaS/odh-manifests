@@ -7,7 +7,6 @@ commonLabels:
   component.opendatahub.io/name: grafana
 resources:
 - argo-dashboard.yaml
-- /dashboards
 - dashboard.yaml
 - datasource.yaml
 - grafana.yaml

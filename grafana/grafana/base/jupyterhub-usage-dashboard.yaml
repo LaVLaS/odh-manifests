@@ -5,4 +5,5 @@ metadata:
   labels:
     app: grafana
 spec:
-  url: https://raw.githubusercontent.com/odh-manifests/grafana/grafana/base/dashboards/jupyterhub-usage.json
+  #url: https://raw.githubusercontent.com/odh-manifests/grafana/grafana/base/dashboards/jupyterhub-usage.json
+  url: https://raw.githubusercontent.com/LaVLaS/odh-manifests/pr/grafana/grafana/base/dashboards/jupyterhub-usage.json
