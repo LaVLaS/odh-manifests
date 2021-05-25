@@ -1,0 +1,50 @@
+apiVersion: kfdef.apps.kubeflow.org/v1
+kind: KfDef
+metadata:
+  name: opendatahub
+  namespace: opendatahub
+spec:
+  applications:
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: odh-common
+      name: odh-common
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: ceph/object-storage/scc
+      name: ceph-nano-scc
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: ceph/object-storage/nano
+      name: ceph-nano
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: odhseldon/cluster
+      name: odhseldon
+    - kustomizeConfig:
+        parameters:
+          - name: s3_endpoint_url
+            value: http://ceph-nano-0
+        repoRef:
+          name: manifests
+          path: jupyterhub/jupyterhub
+      name: jupyterhub
+    - kustomizeConfig:
+        overlays:
+          - additional
+        repoRef:
+          name: manifests
+          path: jupyterhub/notebook-images
+      name: notebook-images
+    - kustomizeConfig:
+        repoRef:
+          name: manifests
+          path: mlflow-tracking-operator
+      name: mlflow-tracking
+  repos:
+    - name: manifests
+      uri: https://github.com/lavlas/odh-manifests/tarball/feature/mlflow-odh-v1.0.11
